@@ -1,0 +1,2824 @@
+
+*{
+    margin: 0;
+    padding: 0; 
+    /* outline: 1px solid red;   */
+}
+
+/* div {
+    border: 1px solid red;
+} */
+
+body{
+
+    font-family: Segoe UI; 
+    max-width: 100%;
+  overflow-x: hidden;
+}
+
+:root{
+
+  /* Brand Colors */
+  --primary-color: #FF5A0F;
+  --secondary-color: #0E1E2A;
+
+  /* Background Colors */
+  --bg-dark: #1F2933;
+  --bg-light: #F6F7F8;
+  --bg-white: #FFFFFF;
+
+  /* Text Colors */
+  --text-dark: #0E1E2A;
+  --text-gray: #6B7280;
+  --text-white: #FFFFFF;
+
+  /* Border & UI */
+  --border-color: #E5E7EB;
+
+  /* Overlay */
+  --overlay-dark: rgba(14, 30, 42, 0.75);
+
+}
+
+header{
+  background: var(--bg-white);
+  color: var(--text-dark);
+}
+
+nav a{
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+
+nav a:hover{
+  color: var(--primary-color);
+}
+
+
+/* sidebar menu */
+#menu-toggle{
+  display: none;
+}
+
+/* hamburger icon */
+.menu-icon{
+  font-size: 25px;
+  cursor: pointer;
+  position: fixed;
+  top: 70px;
+  right: 50px;
+  z-index: 10001;
+  
+}
+
+.menu-icon:hover{
+
+    background-color: var(--primary-color);
+    color: white;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}
+
+.hamburger_menu{
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: -280px;   /* hidden */
+  transition: 0.3s ease;
+  z-index: 10000;
+}
+
+.sidebarlogo{
+    padding-top: 30px; 
+}
+
+/* show menu on click */
+#menu-toggle:checked ~ .hamburger_menu{
+  left: 0;
+}
+
+/* menu list */
+.hamburger_ul{
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;   /* 👈 important */
+  gap: 15px;
+}
+
+.hamburger_ul a{
+  text-decoration: none;
+  color: var(--text-dark);
+    font-weight: bold;     
+}
+
+.hamburger_ul a:hover{
+  color: var(--primary-color);
+}
+
+.hamburger_ul>li{
+    padding-left: 15px;
+}
+
+/* button */
+.hamburger_btn{
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.hamburger_btn:hover{
+
+    background-color: var(--bg-dark);
+}
+
+.hamburger_contact{
+    padding-top: 20px; 
+    padding-left: 15px;       
+}
+
+.hamburger_contact p{
+  
+    padding-top: 15px;
+}
+
+.hamburger_contact> span{
+    font-size: 25px;
+    color: var(--primary-color); 
+}
+
+.hamburgericon{
+
+    background-color: var(--primary-color);
+    padding-top: 3px;
+}
+
+/* side menu end here */
+
+.btn-primary{
+  background: var(--primary-color);
+  color: var(--text-white);
+}
+
+.btn-primary:hover{
+  background: #e64e0d;
+}
+
+.section-light{
+  background: var(--bg-light);
+}
+
+.section-dark{
+  background: var(--bg-dark);
+  color: var(--text-white);
+}
+
+.navigation_container{
+height: 130px;
+top: 0;
+position: fixed;
+position: sticky;
+z-index: 9999;
+background-color: var(--bg-light);
+box-shadow: 1px 0px 5px 1px rgb(150, 148, 148);
+
+}
+.nav2{
+    height: 45px;
+    width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    color: var(--text-white);
+}
+
+
+.icon{
+    width: 18px;
+    height: 18px;
+}
+
+
+.nav2_contact{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 100px;
+}
+
+
+.nav2socialicon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;   
+    margin-right: 10px;
+}
+
+.nav2lang{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 50px;
+}
+
+/* nav 2 end here */
+
+/*   Nav 1 start here  */
+
+.nav1{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 20px 0px;
+}
+
+.logistek_logo{
+
+    width: 200px;
+    height: 45px;
+}
+.navicon{
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+
+.nav1parent{
+    width: 50%;
+        
+}
+
+.nav1parent_ul{
+    
+    display: flex;
+    float: right;
+    list-style: none;    
+}
+
+.nav1parent_ul> li{ 
+
+padding-left: 25px;
+align-items: center;
+
+}
+
+
+.dropdown{
+    display: none;
+    position: absolute;
+    top: 100%;        /* 👈 no gap */
+    left: 0;
+    list-style: none;
+    width: max-content;
+    background-color: var(--bg-white);
+    padding: 10px 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+.dropdownli{
+    padding-top: 15px;
+}
+.nav1parentli_drop{
+    position: relative;
+}
+
+.nav1parentli_drop:hover > .dropdown{
+    display: block;    
+}
+
+
+
+@media (max-width: 768px){
+
+  .navigation_container{
+    height: auto;     /* ✅ MOST IMPORTANT */
+  }
+
+  .nav2{
+    display: none;
+  }
+
+  .nav1{
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .nav1parent,
+  .navicon{
+    display: none;
+  }
+
+  /* hamburger icon show */
+  .menu-icon{
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10005;
+    
+  }
+
+  .hamburger_menu{
+    width: 260px;
+  }
+
+.logistek_logo{
+
+    width: 180px;
+    height: 45px;
+}
+
+
+}
+
+/*   Navigation section End here  */
+
+/* hero section start here */
+
+
+.hero{
+    height: 100vh;
+  background: linear-gradient(
+    var(--overlay-dark),
+    var(--overlay-dark)
+  ), url(truck-shipping-port.jpg);
+
+  color: var(--text-white);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.herobox{
+
+    width: 50%;
+    height: auto;
+    color: var(--text-white);
+    padding-left: 100px;
+    padding-top: 150px;
+}
+
+.heroboxH{
+   
+ font-size: 65px;
+    font-weight: 800px;
+    font-family: segoe UI;
+    text-shadow: 5px 5px black;
+}
+
+.heroboxP{
+
+    font-size: 20px;
+    font-weight: 600px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.herobtn{
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    font-weight: bold;
+    border: none;
+}
+
+.herobtn:hover{
+
+    transform: scale(1.05);
+}
+
+
+
+@media (max-width:768px){
+
+
+.hero{
+    
+    height: auto;
+  background: linear-gradient(
+    var(--overlay-dark),
+    var(--overlay-dark)
+  ), url(truck-shipping-port.jpg);
+
+  color: var(--text-white);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.herobox{
+    width: 90%;
+    height: auto;
+    color: var(--text-white);
+    padding: 15px 0px;
+}
+
+.heroboxH{
+   
+    font-size: 22px;
+    font-weight: bold;
+    font-family: segoe UI;
+    text-shadow: 5px 5px black;
+    padding-left: 10px;
+}
+
+.heroboxP{
+
+    font-size: 16px;
+    font-weight: 600px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+
+}
+
+.herobtn{
+    width: 100px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    font-weight: bold;
+    border: none;
+    margin-left: 10px;
+    
+}
+
+}
+
+/*    Hero section end here */
+
+/* Award Winner Logistic Company section start here */
+
+.Logistic_Company{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 100px 100px;
+    background-color: var(--bg-light);
+}
+
+.Logistic_Companyh4{
+   
+    position: relative;
+    padding-left: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    
+}
+
+.Logistic_Companyh4::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+
+.Logistic_Companyh2{
+    font-size: 35px;
+    font-family: segoe UI;
+    padding-left: 10px;
+    
+}
+
+.Logistic_CompanyP{
+    
+    position: relative;
+    padding-left: 0px;
+    color: #555;
+    line-height: 1.8;
+    
+}
+
+.Logistic_CompanyP::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 0px;
+    height: 100%;
+    background: var(--primary-color);
+}
+
+
+@media (max-width:768px) {
+
+.Logistic_Company{
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 50px 10px;
+    background-color: var(--bg-light);
+
+    
+}
+
+.Logistic_Companyh4{
+   
+    position: relative;
+    padding-left: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);    
+}
+
+.Logistic_Companyh4::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+
+.Logistic_Companyh2{
+    font-size: 22px;
+    font-family: segoe UI;
+    padding-top: 15px;
+    
+}
+
+.Logistic_CompanyP{
+    width: 100%;   
+    color: #555;
+    line-height: 1.8;
+}
+
+}
+
+/* Award Winner Logistic Company end here */
+
+.Delivery_container{
+
+    height: 350px;
+    background-color: var(--bg-white);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    margin-left: 100px;
+}
+
+.DeliveryBox1{
+   
+    background-color: var(--primary-color);
+    width: 200px;
+    height: max-content;
+    color: var(--text-white);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;           
+    
+}
+
+.DeliveryBox1icon{
+
+    width: 80px;
+    height: 80px;
+}
+.DeliveryBox1h5{
+    font-size: 22px;
+    padding-bottom: 15px;
+}
+
+.DeliveryBox2img{
+
+    width: 70%;
+    height: auto;
+    
+}
+
+.DeliveryBox2{
+    position: absolute;
+    right: 100px;    
+    width: 50%;
+    top: -90px;
+}
+
+
+@media (max-width:768px) {
+
+
+.Delivery_container{
+
+    height: max-content;
+    background-color: var(--bg-white);
+    display: grid;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    margin-left: 0px;
+    margin: 0px 0px;
+}
+
+.DeliveryBox1{
+   
+    background-color: var(--primary-color);
+    width: 89%;
+    height: max-content;
+    color: var(--text-white);
+    border-radius: 10px;
+    text-align: center;           
+    
+}
+
+.DeliveryBox1icon{
+
+    width: 40px;
+    height: 40px;
+}
+.DeliveryBox1h5{
+    font-size: 22px;
+    padding-bottom: 15px;
+}
+
+.DeliveryBox2img{
+
+    display: none;
+    
+}
+
+.DeliveryBox2{
+    position: absolute;
+    right: 0px;    
+    width: 100%;
+    top: -90px;
+}
+
+
+}
+
+/* About Our Company  start here */
+
+.About_Company{
+
+    display: flex;
+    justify-content: center;
+    
+    gap: 50px;
+    position: relative;
+    padding: 100px 100px;
+}
+
+.signature{
+    width: 150px;
+    height: 50px;
+    margin-left: 30px;
+      
+}
+
+.Aboutbtn{
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.Aboutbtn:hover{
+    background-color: var(--bg-dark);
+}
+
+.About_box2h4{
+    color: var(--primary-color);
+    font-size: 18px;
+    position: relative;
+    padding-left: 50px;    
+}
+
+.About_box2h4::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+
+.About_box1{
+
+    border: 5px solid var(--primary-color);
+    padding: 1px;        /* image aur border ke beech gap */
+    display: inline-block;
+}
+
+.About_box1 img{
+
+    display: block;
+    
+}
+
+
+.About_box2h3{
+
+    font-size: 45px;
+    padding: 15px 0px;
+    font-family: segoe UI;
+}
+
+.About_box2P{
+
+    padding-top: 15px;
+    line-height: 1.8;
+}
+
+.signature_container{ display: flex;
+gap: 20px;
+margin-top: 15px;
+
+}
+
+.Aboutli{
+
+    line-height: 1.8;
+    list-style: none;
+}
+
+
+.aboutimg2box{
+    position: absolute;
+    left: -80px;
+    top: 150px;
+    border: 5px solid var(--primary-color);
+    padding: 2px;
+    background: #fff;
+}
+
+.aboutimg2{
+    width: 250px;
+    height: 400px;
+    display: block;
+}
+
+.thirtyplus{
+
+    width: 280px;
+    height: max-content;
+    padding: 20px 30px;
+    position: absolute;
+    right: 600px;
+    bottom: 50px;
+    background-color: var(--bg-white);
+    border-right: 3px solid var(--primary-color);
+    box-shadow: 0px 1px 5px 1px rgb(208, 205, 205);
+    
+}
+
+.thirtyplush3{
+
+    font-size: 60px;
+    font-weight: 800px;
+    font-family: segoe UI;
+}
+.thirtyplusP{
+
+    font-size: 20px;
+    font-weight: 600px;
+    font-family: segoe UI;
+}
+
+
+@media (max-width:768px) {
+
+    
+.About_Company{
+
+    display: grid;
+    justify-content: center;    
+    gap: 50px;
+    position: relative;
+    padding: 30px 0px;
+}
+
+.signature{
+    width: 100px;
+    height: 50px;
+    margin-left: 0px;
+      
+}
+
+.Aboutbtn{
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.About_box2h4{
+    color: var(--primary-color);
+    font-size: 18px;
+    position: relative;
+    padding-left: 50px;    
+}
+
+.About_box2h4::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+
+.About_box1{
+
+    border: 5px solid var(--primary-color);
+    padding: 0px;        /* image aur border ke beech gap */
+    display: inline-block;
+}
+
+.About_box1 img{
+
+    width: 100%;
+    
+}
+
+
+.About_box2h3{
+
+    font-size: 22px;
+    padding: 15px 0px;
+    font-family: segoe UI;
+}
+
+.About_box2{
+
+    padding-left: 10px;
+}
+
+.About_box2P{
+
+    padding-top: 15px;
+    line-height: 1.8;
+}
+
+.signature_container{ display: flex;
+gap: 20px;
+margin-top: 15px;
+
+}
+
+.Aboutli{
+
+    line-height: 1.8;
+    list-style: none;
+}
+
+
+.aboutimg2box{
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    border: 5px solid var(--primary-color);
+    padding: 0px;
+    background: #fff;
+}
+
+.aboutimg2{
+    display: none;
+}
+
+.thirtyplus{
+
+    width: 280px;
+    height: max-content;
+    padding: 20px 30px;
+    position: absolute;
+    right: 600px;
+    bottom: 50px;
+    background-color: var(--bg-white);
+    border-right: 3px solid var(--primary-color);
+    box-shadow: 0px 1px 5px 1px rgb(208, 205, 205);
+    
+}
+
+.thirtyplush3{
+
+    font-size: 60px;
+    font-weight: 800px;
+    font-family: segoe UI;
+}
+.thirtyplusP{
+
+    font-size: 20px;
+    font-weight: 600px;
+    font-family: segoe UI;
+}
+}
+
+
+
+/*   Service We Offer section start here   */
+
+.OurServices{
+
+height: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 100px;
+background-color: var(--primary-color);
+color: var(--text-white);
+
+}
+
+.OurServices_box1{
+
+    width: 50%;
+    text-align: end;
+}
+
+
+.OurServices_box2{
+
+    width: 50%;
+    position: relative;
+}
+
+.OurServices_box1h3{
+
+    font-size: 45px;
+    font-family: Segoe UI;
+}
+
+.OurServices_box1 p{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.OurServices_box2 p{
+
+    line-height: 1.8;
+    position: relative;
+    padding-right: 50px;
+}
+
+
+.OurServices_box2p::before{
+
+    content: "";
+    width: 5px;
+    height: 100px;  
+    position: absolute;    
+    top: -20px;     
+    background-color: white;
+    transform: translateX(-50px);
+    
+}
+
+
+@media (max-width:768px) {
+
+.OurServices{
+
+height: auto;
+display: grid;
+justify-content: center;
+align-items: center;
+gap: 0px;
+background-color: var(--primary-color);
+color: var(--text-white);
+
+
+}
+
+.OurServices_box1{
+
+    
+    padding: 0px 10px;
+    text-align: start;
+}
+
+.OurServices_box2{
+
+    width: 95%;
+    position: relative;
+    text-align: start;
+    padding: 0px 10px;
+
+}
+
+.OurServices_box1h3{
+
+    font-size: 22px;
+    font-family: Segoe UI;
+}
+
+.OurServices_box1 p{
+    font-weight: bold;
+    font-size: 16px;
+    text-align: start;
+}
+
+.OurServices_box2 p{
+
+    line-height: 1.8;
+    position: relative;
+    padding-right: 0px;
+}
+
+
+.OurServices_box2p::before{
+
+   display: none;
+    
+}
+
+
+}
+
+/*  Services_container   start here*/
+
+.Services_Wrapper{
+
+    margin-bottom: 100px;
+}
+
+.Services_container{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    
+}
+
+.Services_card1{
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 3px 2px rgb(221, 216, 216);
+    box-sizing: border-box;
+    margin-top: -70px;
+    overflow: hidden;
+}
+
+.Services_card1:hover{
+
+    transform: scale(1.01);
+    box-shadow: 1px 1px 2px 2px black;
+}
+
+.Services_card1h4{
+    font-size: 30px;
+    font-weight: bold;    
+    padding: 10px 15px;
+}
+
+.Services_card1p{
+    line-height: 1.8;
+    padding-bottom: 10px;
+    padding: 10px 15px;
+}
+
+.Services_card1btn{
+
+    width: max-content;
+    height: max-content;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: none;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.Services_card1btn:hover{
+
+    color: black;
+}
+
+.Services_card1img{
+
+    width: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0;
+    
+}
+
+.Services_containerP{
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 50px 0px;
+    color: var(--bg-dark);
+}
+
+
+@media (max-width:768px) {
+
+.OurServices{
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.Services_Wrapper{
+
+    margin-bottom: 20px;
+}
+
+.Services_container{
+    display: grid;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    
+}
+
+.Services_card1{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 3px 2px rgb(221, 216, 216);
+    box-sizing: border-box;
+    margin-top: 0px;
+    overflow: hidden;
+
+}
+
+
+.Services_card1h4{
+    font-size: 22px;
+    font-weight: bold;    
+    padding: 15px 10px;
+}
+
+.Services_card1p{
+    line-height: 1.8;
+    padding: 20px 10px;
+    
+}
+
+.Services_card1btn{
+
+    width: max-content;
+    height: max-content;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: none;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.Services_card1img{
+
+    width: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0;
+    
+}
+
+.Services_containerP{
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 50px 0px;
+    color: var(--bg-dark);
+}
+
+
+}
+
+
+/*  Request A Quote section Start here  */
+
+.Quote_container{
+
+    height: 500px;
+    background-image: url(/transport-logistics-concept.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(56, 54, 52);
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+
+}
+
+.formbox{
+
+    width: max-content;
+    height: auto;
+    display: grid;
+    gap: 20px;
+    background-color: var(--bg-white);
+    padding: 50px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 5px 1px rgb(159, 156, 156);
+    transform: translateY(-70px);
+}
+
+.formlable{
+
+    font-size: 40px;
+    font-weight: 800;
+    position: relative;
+    
+}
+
+
+.formlable::before {
+
+    content: "";
+    width: 8px;
+    height: 100%;
+    top: 7px;
+    left: -50px;
+    position: absolute;
+    background-color: var(--primary-color);
+}
+
+
+.formbox input{
+    height: 50px;
+    border-radius: 5px;
+}
+
+.formbox textarea{
+    height: 100%;
+    border-radius: 5px;
+}
+
+.formbox button{
+
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    font-weight: bold;
+}
+
+.formbox button:hover{
+
+    background-color: black;
+}
+
+/*   Quote box section    */
+
+.Quote_wrapper{
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding-top: 80px;
+    padding-left: 50px;
+    z-index: 100;
+}
+
+.Quote_card1{
+
+    width: max-content;
+    height: max-content;
+    background-color: rgb(245, 245, 240);
+    border-radius: 10px;
+    padding: 30px 50px;
+}
+
+.Quote_card1:hover{
+
+    transform: scale(1.01);
+    box-shadow: 1px 1px 2px 2px var(--primary-color);
+}
+
+.Quote_card1 h5{
+
+font-size: 50px;
+font-weight: bold;
+color: var(--primary-color);
+
+}
+
+.Quote_card1 p{
+    font-size: 20px;
+    color: #575a5d;
+    font-weight: bold;
+}
+
+.person1img{
+    
+    width: 30%;
+    height: fit-content;
+    position: absolute;
+    z-index: 0;
+    top: -150px;
+    right: 10px;
+}
+
+
+@media (max-width:768px) {
+
+
+.Quote_container{
+
+    height:auto;
+    background-image: url(/transport-logistics-concept.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    background-color: rgb(56, 54, 52);
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    padding-bottom: 20px;
+
+}
+
+.formbox{
+
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 20px;
+    background-color: var(--bg-white);
+    padding: 0px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 5px 1px rgb(159, 156, 156);
+    transform: translateY(-70px);
+    margin-top: 100px;
+}
+
+.formlable{
+
+    font-size: 22px;
+    font-weight: 800;
+    position: relative;
+    padding-top: 10px;
+    
+}
+
+
+.formlable::before {
+
+    display: none;
+}
+
+
+.formbox input{
+    height: 100%;
+    border-radius: 5px;
+}
+
+.formbox textarea{
+    height: 100px;
+    border-radius: 5px;
+}
+
+.formbox button{
+
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    font-weight: bold;
+}
+
+/*   Quote box section    */
+
+.Quote_wrapper{
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding-top: 0px;
+    padding-left: 0px;
+    z-index: 100;
+}
+
+.Quote_card1{
+
+    width: 100%;
+    height: max-content;
+    background-color: rgb(245, 245, 240);
+    border-radius: 10px;
+    padding: 30px 0px;
+    text-align: center;
+}
+
+.Quote_card1 h5{
+
+font-size: 22px;
+font-weight: bold;
+color: var(--primary-color);
+
+}
+
+.Quote_card1 p{
+    font-size: 16px;
+    color: #575a5d;
+    font-weight: bold;
+}
+
+.person1img{
+    
+   display: none;
+}
+
+
+}
+
+
+
+/*   Team Members section start here  */
+
+.Teams{
+
+    margin: 100px;
+       
+}
+
+.Teams_content{
+
+height: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 100px;
+background-color: var(--bg-white);
+color: var(--text-dark);
+
+}
+
+.Teams_box2p{
+
+    line-height: 1.8;
+    position: relative;
+    padding-right: 50px;
+}
+
+
+.Teams_box2p::before{
+
+    content: "";
+    width: 5px;
+    height: 100px;  
+    position: absolute;    
+    top: -20px;     
+    background-color: var(--primary-color);
+    transform: translateX(-50px);
+    
+}
+
+.Teams_box1{
+
+    width: 50%;
+    text-align: end;
+}
+
+.Teams_box1>p{
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.Teams_box1h3{
+
+    font-size: 45px;
+    font-family: Segoe UI;
+}
+
+/* Teams_container */
+
+.Teams_container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.Teams_card1{
+
+    width: max-content;
+    height: auto;
+    background-color: var(--bg-light);
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px 2px rgb(212, 210, 210);
+}
+
+.Teams_card1:hover{
+
+    transform: scale(1.01);
+    box-shadow: 1px 1px 2px 2px var(--primary-color);
+}
+
+.Teams_card1img{
+
+    width: 100%;
+    height: fit-content;
+
+}
+
+.Teams_card1 h4{
+
+    font-size: 22px;
+    padding: 15px 15px;
+
+}
+
+.Teams_card1 p{
+
+    font-size: 18px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+
+}
+
+/* Clientslogo_box */
+
+.Clientslogo_box{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 50px 0px;
+}
+
+
+
+@media (max-width:768px) {
+
+
+.Teams{
+
+    margin: 0px;
+    padding: 0px 0px;
+       
+}
+
+.Teams_content{
+
+height: 25  0px;
+display: grid;
+justify-content: center;
+align-items: center;
+gap: 20px;
+background-color: var(--bg-white);
+color: var(--text-dark);
+text-align: center;
+
+}
+
+.Teams_box2p{
+
+    line-height: 1.8;
+    position: relative;
+    padding-right: 0px;
+    padding: 0px 10px;
+}
+
+
+.Teams_box2p::before{
+
+    content: "";
+    width: 5px;
+    height: 100px;  
+    position: absolute;    
+    top: 0px;     
+    background-color: var(--primary-color);
+    transform: translateX(-50px);
+    
+}
+
+.Teams_box1{
+
+    width: 100%;
+    text-align: center;
+}
+
+.Teams_box1>p{
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.Teams_box1h3{
+
+    font-size: 22px;
+    font-family: Segoe UI;
+}
+
+/* Teams_container */
+
+.Teams_container{
+
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.Teams_card1{
+
+    width: max-content;
+    height: auto;
+    background-color: var(--bg-light);
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px 2px rgb(212, 210, 210);
+    text-align: center;
+}
+
+.Teams_card1img{
+
+    width: 100%;
+    height: fit-content;
+
+}
+
+.Teams_card1 h4{
+
+    font-size: 22px;
+    padding: 15px 0px;
+
+}
+
+.Teams_card1 p{
+
+    font-size: 16px;
+    padding-bottom: 15px;
+    padding-left: 0px;
+
+}
+
+/* Clientslogo_box */
+
+.Clientslogo_box{
+    
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 50px 0px;
+}
+
+
+}
+
+/*    News And Updates section 1 start here  */
+
+.News_Updates{
+
+    background-color: var(--bg-dark);    
+    height: max-content;
+    color: white;
+    padding-top: 100px;
+    
+}
+
+.News_Updates_wrapper{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 50px;
+    gap: 100px;
+
+}
+.News_Updates_box1{
+    padding-right: 150px;
+}
+
+
+.News_Updates_box1h5{
+    font-size: 35px;    
+    text-shadow: 3px 2px var(--primary-color);
+}
+
+.News_Updates_box1btn{
+
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: none;
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+.News_Updates_box1btn:hover{
+    transform: scale(1.05);
+}
+
+.News_Updates_box1p{
+    color: var(--primary-color);
+    font-size: 18px;
+    position: relative;
+    padding-left: 50px; 
+    font-weight: bold;   
+    
+}
+
+.News_Updates_box1p::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+.News_Updates_box2{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 50px;
+}
+
+.News_Updates_box2img{
+
+    width: 22%;
+    height: auto;
+}
+
+.News_Updates_box2img:hover{
+
+     transform: scale(1.01);
+    box-shadow: 1px 1px 2px 2px var(--primary-color);
+}
+
+
+@media (max-width:768px) {
+
+    
+.News_Updates{
+
+    background-color: var(--bg-dark);    
+    height: max-content;
+    color: white;
+    padding-top: 50px;
+    
+}
+
+.News_Updates_wrapper{
+     display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px;
+    gap: 20px;
+
+}
+.News_Updates_box1{
+    padding-right: 0px;
+}
+
+.News_Updates_box1h5{
+    font-size: 25px;    
+    text-shadow: 3px 2px var(--primary-color);
+}
+
+.News_Updates_box1btn{
+
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+.News_Updates_box1btn:hover{
+    transform: scale(1.05);
+}
+
+.News_Updates_box1p{
+    color: var(--primary-color);
+    font-size: 18px;
+    position: relative;
+    padding-left: 50px; 
+    font-weight: bold;   
+    
+}
+
+.News_Updates_box1p::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+.News_Updates_box2{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 50px;
+}
+
+.News_Updates_box2img{
+
+    width: 22%;
+    height: auto;
+}
+
+}
+
+
+
+/*  Testimonials section start here  */
+
+
+.Testimonials_container{
+
+height: max-content;
+background-image: url(/Testimonials\ background.png);
+background-repeat: no-repeat;
+background-size: cover;
+margin: auto;
+text-align: center;
+padding: 80px 0px;
+
+}
+
+.Testimonials_container> h5{
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.Testimonials_container> h3{
+
+    font-size: 35px;
+    padding: 20px 0px;
+    font-weight: bold;
+}
+
+.Testimonials_wrapper{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    }
+
+.Testimonials_box1{
+
+    width: 25%;
+    height: auto;
+    border-radius: 10px;
+    background-color: var(--bg-white);
+    box-shadow: 1px 1px 2px 2px rgb(197, 195, 195);
+    padding: 30px 30px;
+
+}
+
+.Testimonials_box1:hover{
+     transform: scale(1.01);
+    box-shadow: 1px 1px 2px 2px var(--primary-color);
+}
+
+.Testimonialsimg{
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.Testimonials_Aurther{
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.Testimonials_star{
+    padding: 20px 0px;
+}
+
+@media (max-width:768px) {
+
+   
+.Testimonials_container{
+
+height: max-content;
+background-image: url(/Testimonials\ background.png);
+background-repeat: no-repeat;
+background-size: cover;
+margin: auto;
+text-align: center;
+padding: 50px 0px;
+
+}
+
+.Testimonials_container> h5{
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.Testimonials_container> h3{
+
+    font-size: 22px;
+    padding: 20px 0px;
+    font-weight: bold;
+}
+
+.Testimonials_wrapper{
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    }
+
+.Testimonials_box1{
+
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background-color: var(--bg-white);
+    box-shadow: 1px 1px 2px 2px rgb(197, 195, 195);
+    padding: 30px 0px;
+
+}
+
+.Testimonialsimg{
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.Testimonials_Aurther{
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.Testimonials_star{
+    padding: 20px 0px;
+}
+
+}
+
+
+/*   Why Choose Us? section start here    */
+
+
+.chooseus_container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: auto;
+    color: #ffffff;
+
+    background-image:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url(/truck-shipping-port.jpg);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.person2img{
+
+    width: 100%;
+    height: auto;
+}
+
+.person2img:hover{
+
+    transform: scale(1.01);
+}
+
+.chooseus_box2{
+
+    width: 50%;
+}
+
+.chooseus_box1{
+    width: 50%;
+}
+
+.chooseus_box2h3{
+
+    font-size: 45px;
+    padding-top: 15px;
+}
+
+.chooseus_box2p{
+
+    line-height: 1.8;
+    padding-top: 20px;
+}
+
+.videobtn{
+
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+}
+
+.videobtn:hover{
+
+    transform: scale(1.02);
+    box-shadow: 1px 1px 2px 2px var(--bg-white);
+}
+
+.chooseus_box2h4{
+    color: var(--text-white);
+    font-size: 18px;
+    position: relative;
+    padding-left: 50px;    
+}
+
+.chooseus_box2h4::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+@media (max-width:768px) {
+
+    
+.chooseus_container{
+    height: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: auto;
+    color: #ffffff;
+
+    background-image:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url(/truck-shipping-port.jpg);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.person2img{
+
+    width: 100%;
+    height: auto;
+}
+
+.chooseus_box2{
+
+    width: 95%;
+    text-align: start;
+    padding-left: 10px;
+}
+
+.chooseus_box1{
+    width: 100%;
+    padding-top: 15px;
+}
+
+.chooseus_box2h3{
+
+    font-size: 22px;
+    padding-top: 15px;
+}
+
+.chooseus_box2p{
+
+    line-height: 1.8;
+    padding-top: 20px;
+}
+
+.videobtn{
+
+    width: 70px;
+    height: 70px;
+    margin-top: 30px;
+}
+
+
+.chooseus_box2h4{
+    color: var(--text-white);
+    font-size: 18px;
+    position: relative;
+    padding-left: 50px;    
+}
+
+.chooseus_box2h4::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateY(-50%);
+}
+}
+
+
+/*  News And Updates section start here  */
+
+.news2_container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 50px;
+
+}
+
+.news2box1h5{
+
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    padding-left: 50px;
+}
+
+.news2box1h5::after {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+
+.news2box1h3{
+
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.news2box1btn{
+
+    width: 150px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+
+.news2box1btn:hover{
+
+    background-color: var(--bg-dark);
+}
+
+/* card wrapper */
+
+.news2_wrapper{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    
+}
+
+.news2_card1{
+    width: 30%;
+    height: auto;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 1px 1px rgb(192, 189, 189);
+    margin: 50px 0px;
+}
+
+.news2_card1:hover{
+
+    transform: scale(1.01);
+    box-shadow: 1px 1px 2px 2px var(--primary-color);
+}
+
+.newsimage{
+    width: 100%;
+    height: fit-content;
+}
+
+.news2_card1h3{
+    font-size: 20px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.newsicon{
+    width: 15px;
+    height: 15px;
+}
+
+.newsicon_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    margin: 20px 0px;
+}
+
+@media (max-width:768px) {
+
+    
+.news2_container{
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    text-align: center;
+
+}
+
+.news2box1h5{
+
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    padding-left: 0px;
+}
+
+.news2box1h5::after {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 35px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateY(-50%);
+}
+
+
+.news2box1h3{
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.news2box1btn{
+
+    width: 100px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+
+
+/* card wrapper */
+
+.news2_wrapper{
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    
+}
+
+.news2_card1{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 1px 1px rgb(192, 189, 189);
+    margin: 50px 0px;
+}
+
+.newsimage{
+    width: 100%;
+    height: fit-content;
+}
+
+.news2_card1h3{
+    font-size: 20px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.newsicon{
+    width: 15px;
+    height: 15px;
+}
+
+.newsicon_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    margin: 20px 0px;
+}
+
+}
+
+
+
+/*   footer section start here */
+
+
+.footer_container{
+width: 100%;
+height: 300px;
+padding: 100px 0px;
+background-color: var(--bg-dark);
+color: var(--text-white);
+display: flex;
+justify-content: center;
+align-items: start;
+gap: 30px;
+margin: auto;
+
+}
+.footer_card1{
+
+width: 25%;
+
+}
+.footerlogo{
+    width: 200px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.footericon{
+    width: 25px;
+    height: 25px;
+}
+
+.footer_contactbox{
+    display: flex;
+    gap: 10px;
+}
+
+
+.footersocialicon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;   
+    margin-right: 10px;
+}
+
+.footericon{
+    width: 20px;
+    height: 20px;
+    padding-left: 10px;
+}
+
+.footer_card1 p{
+
+    padding-bottom: 15px;
+}
+
+.footer_card2{ 
+    width: 15%;
+    
+}
+
+.footer_card2> span{
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer_card2> ul{
+
+    padding-block: 15px;
+    list-style: none;
+}
+
+.footer_card3 a{
+
+    text-decoration: none;
+    color: white;
+}
+
+.footer_card3 a:hover{
+    color: var(--primary-color);
+}
+
+.footer_card2 li{
+
+    padding-bottom: 15px;
+    
+}
+
+.footer_card3{
+    width: 15%;
+}
+
+.footer_card3 span{
+
+font-size: 20px;
+    font-weight: bold;
+}
+
+.footer_card3> ul{
+
+padding-block: 15px;
+    list-style: none;
+
+}
+
+.footer_card3 li{
+
+padding-bottom: 15px;
+    
+}
+
+.footer_card4{
+
+    width: 25%;
+}
+
+.footer_card4 span{
+font-size: 20px;
+    font-weight: bold;
+
+}
+
+.footer_card4 p{
+
+    padding: 15px 0px;
+
+}
+
+.footeremailbox{
+
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.footer_card4btn{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    font-weight: bold;
+    margin-top: 15px;
+}
+.footer_card4btn:hover{
+    background-color: var(--bg-dark);
+    border: 1px solid white;
+}
+
+
+.Copyright{
+    color: var(--text-white);
+    background-color: var(--bg-dark);
+    text-align: center;
+    padding-top: 15px;
+    height: 50px;
+}
+
+@media (max-width:768px) {
+
+
+.footer_container{
+width: 100%;
+height: auto;
+padding: 50px 0px;
+background-color: var(--bg-dark);
+color: var(--text-white);
+display: grid;
+justify-content: center;
+align-items: start;
+gap: 15px;
+margin: auto;
+
+}
+.footer_card1{
+
+width: 97%;
+padding-left: 10px;
+
+}
+.footerlogo{
+    width: 180px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.footericon{
+    width: 25px;
+    height: 25px;
+}
+
+.footer_contactbox{
+    display: flex;
+    gap: 10px;
+}
+
+
+.footersocialicon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;   
+    margin-right: 10px;
+}
+
+.footericon{
+    width: 20px;
+    height: 20px;
+    padding-left: 10px;
+}
+
+.footer_card1 p{
+
+    padding-bottom: 15px;
+}
+
+.footer_card2{ 
+    width: 95%;
+    padding-left: 15px;
+}
+
+.footer_card2> span{
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer_card2> ul{
+
+    padding-block: 15px;
+    list-style: none;
+}
+
+.footer_card2 li{
+
+    padding-bottom: 15px;
+    
+}
+
+.footer_card3{
+    width: 95%;
+    padding-left: 15px;
+}
+
+.footer_card3 span{
+
+font-size: 20px;
+    font-weight: bold;
+}
+
+.footer_card3> ul{
+
+padding-block: 15px;
+    list-style: none;
+
+}
+
+.footer_card3 li{
+
+padding-bottom: 15px;
+    
+}
+
+.footer_card4{
+
+    width: 95%;
+    padding-left: 15px;
+}
+
+.footer_card4 span{
+font-size: 20px;
+    font-weight: bold;
+
+}
+
+.footer_card4 p{
+
+    padding: 15px 0px;
+
+}
+
+.footeremailbox{
+
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.footer_card4btn{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.Copyright{
+    color: var(--text-white);
+    background-color: var(--bg-dark);
+    text-align: center;
+    padding-top: 15px;
+    height: 50px;
+}
+
+}
+
+
+/*   footer section END here */
+
+/* About Us Page Section start here */
+
+.Aboutus_hero{
+
+  height: 400px;
+  background: linear-gradient(
+    var(--overlay-dark),
+    var(--overlay-dark)
+  ), url(transport-logistics-concept\ 2.jpg);
+
+  color: var(--text-white);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;   
+
+}
+.Aboutus_heroh4{
+    font-size: 45px;
+    text-align: center;
+    padding-top: 200px;
+}
+
+/*    COntact Page section start here */
+
+.Contact_Container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: auto;
+    padding: 100px 100px;
+}
+
+.mapbox{
+    width: 50%;
+}
+
+.ContactBox1{
+
+    width: 50%;
+}
+
+.form_input{
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    
+}
+
+.form_subject{
+    width: 508px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 15px 0px;
+}
+.formtextarea{
+width: 508px;
+    height: 150px;
+    border-radius: 10px;
+
+}
+
+.ContactUsBtn{
+
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.ContactusH{
+
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    
+}
+
+.contactphone_container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 100px;
+}
+.contactphone_box1{
+
+    width: 300px;
+    height: 150px;
+    background-color: var(--bg-light);
+}
+.contactphone_subbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 25px;
+    box-shadow: 1px 1px 2px 2px rgb(172, 171, 171);
+}
+
+.locationIcon{
+    width: 80px;
+    height: 80px;
+}
+.contactphone_subbox h4{
+    padding-bottom: 10px;
+    font-size: 20px;
+}
